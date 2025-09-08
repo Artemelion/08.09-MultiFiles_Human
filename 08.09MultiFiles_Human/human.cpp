@@ -1,11 +1,19 @@
 #include "human.h" // файл реализации
+#include <iostream>
+using namespace std;
 
 Human::Human()
 {
+	name = surname = nullptr;
+	age = 0;
+	cout << "Constructor" << endl;
 }
 
 Human::Human(const char* n, const char* s, int a)
 {
+	name = new char[strlen(n) + 1];
+	strcpy_s(name, strlen(n) + 1, n);
+	age = a;
 }
 
 Human::~Human()
